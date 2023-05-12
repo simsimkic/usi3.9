@@ -1,0 +1,33 @@
+﻿<Window x:Class="ZdravoCorp.Doktor.examinationWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZdravoCorp.Doktor"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Examination window">
+
+    <Grid>
+        <Label Content="Patients examination window" HorizontalAlignment="Center" Height="34" Margin="0,10,0,0" VerticalAlignment="Top" Width="384" HorizontalContentAlignment="Center" FontSize="20"/>
+        <Label Content="Anamnesis: " HorizontalAlignment="Left" Height="27" Margin="36,111,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Name: " HorizontalAlignment="Left" Height="32" Margin="36,74,0,0" VerticalAlignment="Top" Width="54"/>
+        <Label Content="Last Name: " HorizontalAlignment="Left" Height="32" Margin="267,74,0,0" VerticalAlignment="Top" Width="83"/>
+        <Label Name="patName" HorizontalAlignment="Left" Height="33" Margin="95,72,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label Name="patLastName" HorizontalAlignment="Left" Height="33" Margin="355,74,0,0" VerticalAlignment="Top" Width="125"/>
+
+        <TextBox Name="anamnesisTB" HorizontalAlignment="Left" Height="122" Margin="48,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Text="{Binding anamnesisContent}"/>
+
+        <Button Name="cancelBtn" Content="Cancel" HorizontalAlignment="Left" Height="36" Margin="48,346,0,0" VerticalAlignment="Top" Width="110" Click="cancelBtn_Click"/>
+        <Button Name="FinishBtn" Content="Finish examination" HorizontalAlignment="Left" Height="36" Margin="166,346,0,0" VerticalAlignment="Top" Width="121" Click="FinishBtn_Click"/>
+        <Button Name="openMedCardBtn" Content="Open medical background" HorizontalAlignment="Left" Height="36" Margin="48,292,0,0" VerticalAlignment="Top" Width="239" Click="openMedCardBtn_Click"/>
+
+
+        <DataGrid Name="listOfEquipment" HorizontalAlignment="Left" Height="144" Margin="418,138,0,0" VerticalAlignment="Top" Width="357" AutoGenerateColumns="True" ItemsSource ="{ Binding tableOfItems.DefaultView }"/>
+
+
+
+
+
+    </Grid>
+</Window>

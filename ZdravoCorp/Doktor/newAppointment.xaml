@@ -1,0 +1,57 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:ZdravoCorp.Doktor"  x:Class="ZdravoCorp.Doktor.newAppointment"
+        mc:Ignorable="d"
+        Title="New Appointment" Height="500" Width="700">
+
+    <Grid>
+        <DatePicker Name="DateCal" HorizontalAlignment="Left" Height="30" Margin="40,81,0,0" VerticalAlignment="Top" Width="225"
+                    FontSize="15" FontWeight="Bold" Foreground="Turquoise" BorderBrush="Turquoise"
+                    SelectedDate="{x:Static sys:DateTime.Today}" RenderTransformOrigin="0.5,0.5"/>
+        <Label Content="Select date of appointment:" HorizontalAlignment="Left" Height="25" Margin="40,51,0,0" VerticalAlignment="Top" Width="202"
+               FontWeight="DemiBold" FontSize="12" HorizontalContentAlignment="Center"/>
+        <ComboBox x:Name="hourStartCB" Margin="40,202,582,242" RenderTransformOrigin="0.5,0.5" SelectedIndex="0" SelectionChanged="DurationCB_SelectionChanged"
+                  ItemsSource="{Binding hours}" VerticalContentAlignment ="Center"/>
+        <ComboBox x:Name="minuteStartCB" Margin="166,202,458,242" SelectedIndex="0" SelectionChanged="DurationCB_SelectionChanged"
+                  ItemsSource="{Binding minutes}" VerticalContentAlignment ="Center"/>
+
+        <Label Content="Hours:" HorizontalAlignment="Left" Height="29" Margin="40,173,0,0" VerticalAlignment="Top" Width="78"
+               FontWeight="DemiBold" HorizontalContentAlignment="Center"/>
+        <Label Content="Minutes:" HorizontalAlignment="Left" Height="29" Margin="166,173,0,0" VerticalAlignment="Top" Width="78"
+               FontWeight="DemiBold" HorizontalContentAlignment="Center"/>
+        <Label Content="Starting time: " HorizontalAlignment="Left" Height="26" Margin="40,147,0,0" VerticalAlignment="Top" Width="226"
+               FontWeight="DemiBold" HorizontalContentAlignment="Center"/>
+        <ComboBox x:Name="hourDurationCB" Margin="40,328,582,110" RenderTransformOrigin="0.5,0.5" SelectedIndex="0" SelectionChanged="DurationCB_SelectionChanged" 
+                  ItemsSource="{Binding hours}" VerticalContentAlignment ="Center"/>
+        <ComboBox x:Name="minuteDurationCB" Margin="166,328,458,110" SelectedIndex="0" 
+                   ItemsSource="{Binding minutes}" VerticalContentAlignment ="Center" SelectionChanged="DurationCB_SelectionChanged"/>
+        
+        <Label Content="Hours:" HorizontalAlignment="Left" Height="29" Margin="40,299,0,0" VerticalAlignment="Top" Width="78"
+            FontWeight="DemiBold" HorizontalContentAlignment="Center"/>
+        <Label Content="Minutes:" HorizontalAlignment="Left" Height="29" Margin="166,299,0,0" VerticalAlignment="Top" Width="78"
+            FontWeight="DemiBold" HorizontalContentAlignment="Center"/>
+        <Label Content="Duration of procedure: " HorizontalAlignment="Left" Height="26" Margin="40,273,0,0" VerticalAlignment="Top" Width="226"
+            FontWeight="DemiBold" HorizontalContentAlignment="Center"/>
+        <ComboBox Name="operationTypeCB" HorizontalAlignment="Left" Height="35" Margin="381,76,0,0" VerticalAlignment="Top" Width="181"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="DemiBold" SelectedIndex="0" >
+            <ComboBoxItem Content="Operation"/>
+            <ComboBoxItem Content="Check up"/>
+        </ComboBox>
+        <Label Content="Type of procedure:" HorizontalAlignment="Left" Height="26" Margin="384,50,0,0" VerticalAlignment="Top"
+               Width="176" FontWeight="DemiBold" HorizontalContentAlignment="Center"/>
+        <ListView Name="AvailablePatList"  HorizontalAlignment="Left" Height="193" Margin="368,165,0,0" VerticalAlignment="Top" 
+                  Width="280" ItemsSource="{Binding suitablePatients}" SelectedIndex="-1"/>
+
+        <Label Content="Available patients: " HorizontalAlignment="Left" Height="28" Margin="384,137,0,0" VerticalAlignment="Top" Width="248"
+               FontWeight="DemiBold" HorizontalContentAlignment="Center"/>
+        <Button Name="SearchAvailablePatBtn" Content="Search available patients" HorizontalAlignment="Left" 
+                Height="29" Margin="40,413,0,0" VerticalAlignment="Top" Width="225"  Click="SearchAvailablePatBtn_Click"/>
+        <Button Name="ScheduleAppBtn" Content="Schedule appointment" HorizontalAlignment="Left"
+                Height="28" Margin="400,414,0,0" VerticalAlignment="Top" Width="248" 
+                IsEnabled="False" Click="ScheduleAppBtn_Click"/>
+    </Grid>
+</Window>

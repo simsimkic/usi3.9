@@ -1,0 +1,19 @@
+﻿<Window x:Class="ZdravoCorp.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="500" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Name="UserNameTextBox" HorizontalAlignment="Left" Height="60" Margin="105,54,0,0" TextWrapping="Wrap" Text="UserName" VerticalAlignment="Top" Width="198" RenderTransformOrigin="0.738,0.474"/>
+        <PasswordBox Name="PasswordTextBox" HorizontalAlignment="Left" Height="60" Margin="105,155,0,0" VerticalAlignment="Top" Width="198" RenderTransformOrigin="0.738,0.474"/>
+        <Button Name="LoginBtn" HorizontalAlignment="Left" Height="31" Margin="101,280,0,0" VerticalAlignment="Top" Width="99">
+            Login
+        </Button>
+    </Grid>
+</Window>

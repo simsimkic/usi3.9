@@ -1,0 +1,32 @@
+﻿<Window x:Class="ZdravoCorp.ManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp"
+        mc:Ignorable="d"
+        Title="ManagerWindow" Height="460" Width="800"
+        Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <HeaderedContentControl>
+            <StackPanel Orientation="Horizontal">
+
+                <TextBox Height="43" TextWrapping="Wrap" Text="" Width="156" TextChanged="TextBox_TextChanged" x:Name ="Filter_Box"/>
+                <ComboBox Height="53" Width="92" Name="Amount_Box" SelectionChanged="AmoutBox_SelectionChanged"/>
+                <ComboBox Height="53" Width="92" Name="Room_Type_Box" SelectionChanged="RoomTypeBox_SelectionChanged"/>
+                <CheckBox Content="Bez Opreme U Magacinu" Height="15" Width="182" Name="Not_Warehouse_Checkbox" IsChecked="True" Checked="NotWarehouseCheckBox_IsEnabledChanged" Unchecked="NotWarehouseCheckBox_IsEnabledChanged"/>
+                <Button Name ="Order_Equipment_Button" Click="Button_Click">Narucivanje Opreme</Button>
+            </StackPanel>
+        </HeaderedContentControl>
+       
+        <DataGrid AutoGenerateColumns ="True" Margin="0,71,0,0" Name="Data_Grid" ColumnWidth="Auto"/>
+
+    </Grid>
+</Window>

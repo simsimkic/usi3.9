@@ -1,0 +1,43 @@
+﻿<Window x:Class="ZdravoCorp.ManagerEquipmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp"
+        mc:Ignorable="d"
+        Title="ManagerEquipmentWindow" Height="450" Width="800">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <HeaderedContentControl>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Height="29" TextWrapping="Wrap" Text="" Width="156" x:Name ="Number_Box"/>
+                <Button Content="Request" Click="Btn_Request_Click" x:Name="Btn_Request" Height="25" Width="60"/>
+                <Button Content="Move" x:Name="Btn_Move" Height="25" Width="60" Click ="Btn_Movement_Request_Click"/>
+                <CheckBox Name="Filter_Box" Checked="Filter_Box_Checked" Unchecked="Filter_Box_Unchecked">Samo Oprema koje nestaje</CheckBox>
+            </StackPanel>
+        </HeaderedContentControl>
+        <DataGrid AutoGenerateColumns ="False" Margin="0,71,0,0" Name="Data_Grid" ColumnWidth="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv Prostorije"
+                          Binding="{Binding RoomName}"/>
+                <DataGridTextColumn Header="Kolicina"
+                          Binding="{Binding Amount}"/>
+                <DataGridTextColumn Header="Tip Opreme"
+                          Binding="{Binding EquipmentName}"/>
+                <DataGridCheckBoxColumn Header="Dinamicka"
+                          Binding="{Binding Dynamic}"/>
+            </DataGrid.Columns>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="{Binding RowColor}"/>
+                </Style>
+            </DataGrid.RowStyle>
+        </DataGrid>
+    </Grid>
+</Window>

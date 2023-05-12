@@ -1,0 +1,32 @@
+﻿<Window x:Class="ZdravoCorp.Nurse.NurseAdmissionAnamnesis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:ZdravoCorp.Nurse"
+        mc:Ignorable="d"
+        Title="NurseAdmissionAnamnesis" Height="250" Width="500">
+    <Grid Width="500" HorizontalAlignment="center">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Label Content="Symptoms:" HorizontalAlignment="Center"></Label>
+                <TextBox Name="SymptomsTB" Width="200"></TextBox>
+            </StackPanel>
+        
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Label Content="Allergies:" HorizontalAlignment="Center"></Label>
+                <TextBox Name="AllergiesTB" Width="200"></TextBox>
+            </StackPanel>
+        
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Label Content="Past Conditions:" HorizontalAlignment="Center"></Label>
+                <TextBox Name="PastConditionsTB" Width="200"></TextBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Button Margin="10" Name="AddButton" Width="50" Height="30" Click="AddButton_OnClick">Add</Button>
+                <Button Margin="10" Name="CancelButton" Width="50" Height="30" Click="CancelButton_OnClick">Cancel</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
